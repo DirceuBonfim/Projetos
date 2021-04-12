@@ -3,25 +3,25 @@ using std::string;
 
 class Planeta{
 public:
-    string Nome;//do planeta
-    string Luas;//distância média do sol
-    string Rotacao;
+    string Nome;
+    int Rotacao;
+    string Luas;    
 
     void mostrarPlanetas(){
         std::cout<<"Nome - "<< Nome <<std::endl;
-        std::cout<<"Luas - "<< Luas <<std::endl;
         std::cout<<"Rotacao - "<< Rotacao <<std::endl;
+        std::cout<<"Luas - "<< Luas <<std::endl;
         }
-        Planeta(string nome, string luas, string rotacao){
+        Planeta(string nome,int rotacao,string luas){
             Nome = nome;
-            Luas = luas;
             Rotacao = rotacao; 
+            Luas = luas;            
             }        
 };
 
 int main()
 {
-    Planeta planeta1 = Planeta("Mercurio","58","Nenhuma");
+    Planeta planeta1 = Planeta("Mercurio", 58 ,"Nenhuma");
     //planeta1.Nome = "Mercurio";
     //planeta1.Rotacao = 58 ;//horas
     //planeta1.Translacao = 87;//dias
@@ -33,7 +33,7 @@ int main()
     //planeta1.Composicao = "Hélio, sódio, oxigênio";
     planeta1.mostrarPlanetas();
 
-    Planeta planeta2 = Planeta("Venus", "243", "Nenhuma");
+    Planeta planeta2 = Planeta("Venus", 243, "Nenhuma");
     //planeta2.Nome = "Vênus";
     //planeta2.Rotacao = 243 ;//horas
     //planeta2.Translacao = 224;//dias
