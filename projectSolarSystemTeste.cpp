@@ -5,23 +5,41 @@ class Planeta{
 public:
     string Nome;
     int Rotacao;
-    string Luas;    
+    int Translacao;
+    double Diametro;
+    double Massa;
+    int TempMedia;
+    int PresAtmosferica;
+    string Luas;
+    string Composicao;    
 
     void mostrarPlanetas(){
         std::cout<<"Nome - "<< Nome <<std::endl;
         std::cout<<"Rotacao - "<< Rotacao <<std::endl;
+        std::cout<<"Translacao - "<< Translacao <<std::endl;
+        std::cout<<"Diametro - "<< Diametro <<std::endl;
+        std::cout<<"Massa - "<< Massa <<std::endl;
+        std::cout<<"TempMedia - "<< TempMedia <<std::endl;
+        std::cout<<"PresAtmosferica - "<< PresAtmosferica <<std::endl;
         std::cout<<"Luas - "<< Luas <<std::endl;
+        std::cout<<"Composicao - "<< Composicao<<std::endl;
         }
-        Planeta(string nome,int rotacao,string luas){
+        Planeta(string nome,int rotacao,int translacao,double diametro,double massa,int tempMedia,int presAtmosferica,string luas, string composicao){
             Nome = nome;
             Rotacao = rotacao; 
-            Luas = luas;            
+            Translacao = translacao;
+            Diametro = diametro;
+            Massa = massa;
+            TempMedia = tempMedia;
+            PresAtmosferica = presAtmosferica;
+            Luas = luas; 
+            Composicao = composicao;           
             }        
 };
 
 int main()
 {
-    Planeta planeta1 = Planeta("Mercurio", 58 ,"Nenhuma");
+    Planeta planeta1 = Planeta("Mercurio", 58 ,87,4878,3.3303*1023,127,92,"Nenhuma", "Hélio, sódio, oxigênio");
     //planeta1.Nome = "Mercurio";
     //planeta1.Rotacao = 58 ;//horas
     //planeta1.Translacao = 87;//dias
@@ -33,7 +51,7 @@ int main()
     //planeta1.Composicao = "Hélio, sódio, oxigênio";
     planeta1.mostrarPlanetas();
 
-    Planeta planeta2 = Planeta("Venus", 243, "Nenhuma");
+    Planeta planeta2 = Planeta("Venus", 243, 224,12.102,4.8690*1024,482,92,"Nenhuma", "Dióxido de Carbono, Nitrogênio");
     //planeta2.Nome = "Vênus";
     //planeta2.Rotacao = 243 ;//horas
     //planeta2.Translacao = 224;//dias
