@@ -2,7 +2,7 @@
 using std::string;
 
 class Planeta{
-public:
+private:
     string Nome;
     int Rotacao;
     int Translacao;
@@ -11,7 +11,66 @@ public:
     int TempMedia;
     int PresAtmosferica;
     string Luas;
-    string Composicao;    
+    string Composicao;  
+
+public:
+    void setNome(string nome){
+        Nome = nome;
+    }
+    string getNome(){
+        return Nome;
+    }
+    void setRotacao(int rotacao){
+        if(Rotacao <= 30)        
+        Rotacao = rotacao;
+    }
+    int getRotacao(){
+        return Rotacao;
+    }    
+    void setTranslacao(int translacao){
+        Translacao = translacao;
+    }
+    int getTranslacao(){
+        return Translacao;
+    }
+    void setDiametro(double diametro){
+        Diametro = diametro;
+    }
+    double getDiametro(){
+        return Diametro;
+    }
+    void setMassa(double massa){
+        Massa = massa;
+    }
+    double getMassa(){
+        return Massa;
+    }
+    void setTempMedia(int tempMedia){
+        TempMedia = tempMedia;
+    }
+    int getTempMedia(){
+        return TempMedia;
+    }
+    void setPresAtmosferica(int presAtmosferica){
+        PresAtmosferica = presAtmosferica;
+    }
+    int getPresAtmosferica(){
+        return PresAtmosferica;
+    }
+    void setLuas(string luas){
+        Luas = luas;
+    }
+    string getLuas(){
+        return Luas;
+    }
+    void setComposicao(string composicao){
+        Composicao = composicao;
+    }
+    string getComposicao(){
+        return Composicao;
+    }
+
+
 
     void mostrarPlanetas(){
         std::cout<<"Nome - "<< Nome <<std::endl;
@@ -62,5 +121,8 @@ int main()
     //planeta2.Luas = "nenhuma";
     //planeta2.Composicao = "Dióxido de Carbono, Nitrogênio";
     planeta2.mostrarPlanetas();
+
+    planeta1.setRotacao(29);
+    std::cout<<planeta1.getNome()<<" tem rotacao de "<<planeta1.getRotacao()<<" dias no sistema solar"<<std::endl;
 
 }

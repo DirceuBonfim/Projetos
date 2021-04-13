@@ -2,45 +2,103 @@
 using std::string;
 
 class Planeta{
-public:
-    string Nome;//do planeta
-    float Rotacao;//distância média do sol
-    float Translacao;
-    float Diametro;
-    float Massa;
-    float TempMedia;//temteratura média na superficie
-    float PresAtmosferica;//Pressão atmosférica
+private:
+    string Nome;
+    int Rotacao;
+    int Translacao;
+    double Diametro;
+    double Massa;
+    int TempMedia;
+    int PresAtmosferica;
     string Luas;
-    string Composicao;//do que é feito
+    string Composicao;  
+
+public:
+    void setNome(string nome){
+        Nome = nome;
+    }
+    string getNome(){
+        return Nome;
+    }
+    void setRotacao(int rotacao){
+        Rotacao = rotacao;
+    }
+    int getRotacao(){
+        return Rotacao;
+    }    
+    void setTranslacao(int translacao){
+        Translacao = translacao;
+    }
+    int getTranslacao(){
+        return Translacao;
+    }
+    void setDiametro(double diametro){
+        Diametro = diametro;
+    }
+    double getDiametro(){
+        return Diametro;
+    }
+    void setMassa(double massa){
+        Massa = massa;
+    }
+    double getMassa(){
+        return Massa;
+    }
+    void setTempMedia(int tempMedia){
+        TempMedia = tempMedia;
+    }
+    int getTempMedia(){
+        return TempMedia;
+    }
+    void setPresAtmosferica(int presAtmosferica){
+        PresAtmosferica = presAtmosferica;
+    }
+    int getPresAtmosferica(){
+        return PresAtmosferica;
+    }
+    void setLuas(string luas){
+        Luas = luas;
+    }
+    string getLuas(){
+        return Luas;
+    }
+    void setComposicao(string composicao){
+        Composicao = composicao;
+    }
+    string getComposicao(){
+        return Composicao;
+    }
+
+
 
     void mostrarPlanetas(){
-        std::cout<<"Nome "<< Nome <<std::endl;
-        std::cout<<"Rotação "<< Rotacao <<std::endl;
-        std::cout<<"Translacao "<< Translacao <<std::endl;
-        std::cout<<"Diametro "<< Diametro <<std::endl;
-        std::cout<<"Massa "<< Massa <<std::endl;
-        std::cout<<"TempMedia "<< TempMedia <<std::endl;
-        std::cout<<"PresAtmosferica "<< PresAtmosferica <<std::endl;
-        std::cout<<"Luas "<< Luas <<std::endl;
-        std::cout<<"Composicao "<< Composicao <<std::endl;
+        std::cout<<"Nome - "<< Nome <<std::endl;
+        std::cout<<"Rotacao - "<< Rotacao <<std::endl;
+        std::cout<<"Translacao - "<< Translacao <<std::endl;
+        std::cout<<"Diametro - "<< Diametro <<std::endl;
+        std::cout<<"Massa - "<< Massa <<std::endl;
+        std::cout<<"TempMedia - "<< TempMedia <<std::endl;
+        std::cout<<"PresAtmosferica - "<< PresAtmosferica <<std::endl;
+        std::cout<<"Luas - "<< Luas <<std::endl;
+        std::cout<<"Composicao - "<< Composicao<<std::endl;
         }
-        Planeta(string nome, float rotacao, float translacao, float diametro, float massa, float tempMedia, float presAtmosferica, string luas, string composicao){
+        Planeta(string nome,int rotacao,int translacao,double diametro,double massa,int tempMedia,int presAtmosferica,string luas, string composicao){
             Nome = nome;
-            Rotacao = rotacao;
+            Rotacao = rotacao; 
             Translacao = translacao;
             Diametro = diametro;
             Massa = massa;
             TempMedia = tempMedia;
             PresAtmosferica = presAtmosferica;
-            Luas = luas;
-            Composicao = composicao;
-        }
+            Luas = luas; 
+            Composicao = composicao;           
+            }        
 };
 
 int main()
 {
-    Planeta planeta1 = Planeta("Mercúrio", 58, 87, 4878,3,303*1023, 127, 92, "nenhuma", "Hélio, sódio, oxigênio" );
-    //planeta1.Nome = "Mercúrio";
+    Planeta planeta1 = Planeta("Mercurio", 58 ,87,4878,3.3303*1023,127,92,"Nenhuma", "Hélio, sódio, oxigênio");
+    //planeta1.Nome = "Mercurio";
     //planeta1.Rotacao = 58 ;//horas
     //planeta1.Translacao = 87;//dias
     //planeta1.Diametro = 4878;//em km
@@ -51,7 +109,7 @@ int main()
     //planeta1.Composicao = "Hélio, sódio, oxigênio";
     planeta1.mostrarPlanetas();
 
-    Planeta planeta2 = Planeta();
+    Planeta planeta2 = Planeta("Venus", 243, 224,12.102,4.8690*1024,482,92,"Nenhuma", "Dióxido de Carbono, Nitrogênio");
     //planeta2.Nome = "Vênus";
     //planeta2.Rotacao = 243 ;//horas
     //planeta2.Translacao = 224;//dias
@@ -62,5 +120,8 @@ int main()
     //planeta2.Luas = "nenhuma";
     //planeta2.Composicao = "Dióxido de Carbono, Nitrogênio";
     planeta2.mostrarPlanetas();
+
+    
+    std::cout<<planeta1.getNome()<<" tem rotacao de "<<planeta1.getRotacao()<<" dias no sistema solar"<<std::endl;
 
 }
