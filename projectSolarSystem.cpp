@@ -1,12 +1,16 @@
 #include<iostream>
 using std::string;
 
-class Planeta{
+class AbstractPlaneta{
+    virtual void serPlaneta()=0;
+};
+
+class Planeta: AbstractPlaneta{
 private:
     string Nome;
     int Rotacao;
     int Translacao;
-    double Diametro;
+    float Diametro;
     double Massa;
     int TempMedia;
     int PresAtmosferica;
@@ -21,6 +25,7 @@ public:
         return Nome;
     }
     void setRotacao(int rotacao){
+        if(Rotacao <= 30)        
         Rotacao = rotacao;
     }
     int getRotacao(){
@@ -32,10 +37,10 @@ public:
     int getTranslacao(){
         return Translacao;
     }
-    void setDiametro(double diametro){
+    void setDiametro(float diametro){
         Diametro = diametro;
     }
-    double getDiametro(){
+    float getDiametro(){
         return Diametro;
     }
     void setMassa(double massa){
@@ -82,7 +87,7 @@ public:
         std::cout<<"Luas - "<< Luas <<std::endl;
         std::cout<<"Composicao - "<< Composicao<<std::endl;
         }
-        Planeta(string nome,int rotacao,int translacao,double diametro,double massa,int tempMedia,int presAtmosferica,string luas, string composicao){
+        Planeta(string nome,int rotacao,int translacao,float diametro,double massa,int tempMedia,int presAtmosferica,string luas, string composicao){
             Nome = nome;
             Rotacao = rotacao; 
             Translacao = translacao;
@@ -92,7 +97,13 @@ public:
             PresAtmosferica = presAtmosferica;
             Luas = luas; 
             Composicao = composicao;           
-            }        
+            } 
+            void serPlaneta(){
+                if(Diametro >= 2376.0)
+                    std::cout<<Diametro<<" é planeta."<<std::endl;
+                else
+                    std::cout<<Diametro<<" não é planeta"<<std::endl;
+            }       
 };
 
 int main()
@@ -107,9 +118,9 @@ int main()
     //planeta1.PresAtmosferica = 92; //em Bar
     //planeta1.Luas = "nenhuma";
     //planeta1.Composicao = "Hélio, sódio, oxigênio";
-    planeta1.mostrarPlanetas();
+    //planeta1.mostrarPlanetas();
 
-    Planeta planeta2 = Planeta("Venus", 243, 224,12.102,4.8690*1024,482,92,"Nenhuma", "Dióxido de Carbono, Nitrogênio");
+    Planeta planeta2 = Planeta("Venus", 243, 224,12102,4.8690*1024,482,92,"Nenhuma", "Dióxido de Carbono, Nitrogênio");
     //planeta2.Nome = "Vênus";
     //planeta2.Rotacao = 243 ;//horas
     //planeta2.Translacao = 224;//dias
@@ -119,9 +130,10 @@ int main()
     //planeta2.PresAtmosferica = 92; //em Bar
     //planeta2.Luas = "nenhuma";
     //planeta2.Composicao = "Dióxido de Carbono, Nitrogênio";
-    planeta2.mostrarPlanetas();
+    //planeta2.mostrarPlanetas();
 
-    
-    std::cout<<planeta1.getNome()<<" tem rotacao de "<<planeta1.getRotacao()<<" dias no sistema solar"<<std::endl;
-
+    //planeta1.setRotacao(29);
+    //std::cout<<planeta1.getNome()<<" tem rotacao de "<<planeta1.getRotacao()<<" dias no sistema solar"<<std::endl;
+    planeta1.serPlaneta();
+    planeta2.serPlaneta();
 }
